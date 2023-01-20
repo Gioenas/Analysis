@@ -25,5 +25,5 @@ labels <- append(name_mean, name_std)
 X_selected <- select(X_merged, labels)
 #write the database and save to file
 
-write.csv(X_selected, "~/data/UCI/X_selected.csv")
+write.csv(X_selected, "~/R_Coursera/Analysis/X_selected.csv")
 
