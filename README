@@ -1,0 +1,39 @@
+==================================================================
+Data Cleaning work made on the existing
+Human Activity Recognition Using Smartphones Dataset
+Version 1.0
+==================================================================
+By Giovanni Enas, gio.enas@ yahoo.com
+==================================================================
+The former experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist.
+My duty was to merge the test and train databases, insert a couple of columns describing each of the subjects that took part to the experiment with a numeric value from 1 to 30.
+In addition I added a text descirbing column for the 6 actions of the original experiment.
+Later I had to subset the database for only the columns reporting the mean and std values.
+I had also to format the features names to a more comprehensive text version.
+I saved the resulting database in the home directory with the name of X_selected.
+Right away I had to build a brand new database which reports the means and the std for each subject and each activity, also with a descriptive column.
+I saved the resulting database in the home directory under the name of X_sorted.
+==================================================================
+The file run_analysis.R is a script that starts with 2 functions to be use later in the code
+label_names is a function that takes as argument the numeric column activity and make a text column with the words of the six activities, namenly "walkin, walking_upstairs, walking_downstairs, sitting, standing and laying".
+sort_activity is a function for filtering the original database, and perform the mean for each activity, leaving one activity for each row of each subject.
+The script then reads the original databases, merges test and train, adds two more columns for subjects and activities, extracts all the label's names and re-format them in a proper way, then select only the columns of interest and write the first database to the working directory.
+Next uses the described functions to select a new database, insert the new text column with the names of the activities and save to the working directory.
+============================================================================
+Files uploaded to Github
+run_analysis.R: file described above with a couple of ammendments
+CodeBook.pdf:   a Markdown file with explanation of the work few example databases and 2 plots
+READMe:         This file
+===========================================================================================
+License:
+========
+Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
+
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+
+This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.
+
+Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
+
+
+
